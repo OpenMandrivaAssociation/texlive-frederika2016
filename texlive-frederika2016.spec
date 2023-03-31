@@ -1,6 +1,6 @@
 Name:		texlive-frederika2016
 Version:	42157
-Release:	1
+Release:	2
 Summary:	An OpenType Greek calligraphy font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/frederika2016
