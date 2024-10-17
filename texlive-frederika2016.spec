@@ -3,7 +3,7 @@ Version:	42157
 Release:	2
 Summary:	An OpenType Greek calligraphy font
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/frederika2016
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/frederika2016
 License:	ofl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/frederika2016.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/frederika2016.doc.r%{version}.tar.xz
