@@ -1,38 +1,24 @@
-Name:		texlive-frederika2016
-Version:	42157
-Release:	2
+%global tl_name frederika2016
+%global tl_revision 42157
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.000.2016.initial.release
+Release:	%{tl_revision}.1
 Summary:	An OpenType Greek calligraphy font
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/frederika2016
+URL:		https://www.ctan.org/tex-archive/fonts/frederika2016
 License:	ofl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/frederika2016.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/frederika2016.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/frederika2016.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/frederika2016.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Frederika2016 is an attempt to digitize Hermann Zapf's
-Frederika font. The font is the Greek companion of Virtuosa by
-the same designer. This font is a calligraphy font and this is
-an initial release.
+Frederika2016 is an attempt to digitize Hermann Zapf's Frederika font.
+The font is the Greek companion of Virtuosa by the same designer. This
+font is a calligraphy font and this is an initial release.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/fonts/opentype/public/frederika2016
-%doc %{_texmfdistdir}/doc/fonts/frederika2016
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
